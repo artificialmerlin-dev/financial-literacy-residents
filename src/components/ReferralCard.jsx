@@ -24,7 +24,7 @@ export default function ReferralCard() {
         transfer to airline and hotel partners, and get solid travel protections.
       </p>
       <a
-        href="#referral-placeholder"
+        href="https://www.referyourchasecard.com/19v/6E9OEZ384K"
         style={{
           display: 'inline-block',
           fontFamily: 'var(--font-main)',
