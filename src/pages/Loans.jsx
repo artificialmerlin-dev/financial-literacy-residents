@@ -123,7 +123,7 @@ export default function Loans() {
 
       <h2>Getting Professional Help</h2>
       <p>
-        <strong>Student Loan Planner</strong> (studentloanplanner.com), founded by Travis Hornsby,
+        <strong><a href="https://studentloanplanner.com" target="_blank" rel="noopener noreferrer">Student Loan Planner</a></strong> (studentloanplanner.com), founded by Travis Hornsby,
         offers flat-fee loan consultations for <strong>$595</strong>. They have advised over 13,000
         clients with an average reported savings of <strong>$80,000+</strong> per borrower. For a
         six-figure loan decision, this is one of the highest-return professional consultations

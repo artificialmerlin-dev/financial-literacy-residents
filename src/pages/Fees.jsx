@@ -55,15 +55,15 @@ export default function Fees() {
         that list vetted fee-only advisors:
       </p>
       <p>
-        <strong>NAPFA</strong> (napfa.org) — the National Association of Personal Financial Advisors,
+        <strong><a href="https://napfa.org" target="_blank" rel="noopener noreferrer">NAPFA</a></strong> (napfa.org) — the National Association of Personal Financial Advisors,
         the largest professional association of fee-only financial planners.
       </p>
       <p>
-        <strong>Garrett Planning Network</strong> (garrettplanningnetwork.com) — a network of hourly,
+        <strong><a href="https://garrettplanningnetwork.com" target="_blank" rel="noopener noreferrer">Garrett Planning Network</a></strong> (garrettplanningnetwork.com) — a network of hourly,
         as-needed financial planners. Pay only for the time you use.
       </p>
       <p>
-        <strong>XY Planning Network</strong> (xyplanningnetwork.com) — fee-only advisors who specialize
+        <strong><a href="https://xyplanningnetwork.com" target="_blank" rel="noopener noreferrer">XY Planning Network</a></strong> (xyplanningnetwork.com) — fee-only advisors who specialize
         in working with Gen X and Gen Y clients, many of whom serve physicians.
       </p>
 

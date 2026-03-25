@@ -16,7 +16,7 @@ export default function Resources() {
 
       <div style={{ display: 'grid', gap: '1rem', marginTop: '1.5rem' }}>
         <Card>
-          <h3 style={{ marginTop: 0 }}>White Coat Investor</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://whitecoatinvestor.com" target="_blank" rel="noopener noreferrer">White Coat Investor</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             whitecoatinvestor.com
           </p>
@@ -28,7 +28,7 @@ export default function Resources() {
         </Card>
 
         <Card>
-          <h3 style={{ marginTop: 0 }}>Physician on FIRE</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://physicianonfire.com" target="_blank" rel="noopener noreferrer">Physician on FIRE</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             physicianonfire.com
           </p>
@@ -39,7 +39,7 @@ export default function Resources() {
         </Card>
 
         <Card>
-          <h3 style={{ marginTop: 0 }}>Mr. Money Mustache</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://mrmoneymustache.com" target="_blank" rel="noopener noreferrer">Mr. Money Mustache</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             mrmoneymustache.com
           </p>
@@ -51,7 +51,7 @@ export default function Resources() {
         </Card>
 
         <Card>
-          <h3 style={{ marginTop: 0 }}>ChooseFI Podcast</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://choosefi.com" target="_blank" rel="noopener noreferrer">ChooseFI Podcast</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             choosefi.com
           </p>
@@ -62,7 +62,7 @@ export default function Resources() {
         </Card>
 
         <Card>
-          <h3 style={{ marginTop: 0 }}>Student Loan Planner</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://studentloanplanner.com" target="_blank" rel="noopener noreferrer">Student Loan Planner</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             studentloanplanner.com
           </p>
@@ -73,7 +73,7 @@ export default function Resources() {
         </Card>
 
         <Card>
-          <h3 style={{ marginTop: 0 }}>Bogleheads</h3>
+          <h3 style={{ marginTop: 0 }}><a href="https://bogleheads.org" target="_blank" rel="noopener noreferrer">Bogleheads</a></h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
             bogleheads.org
           </p>
