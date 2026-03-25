@@ -61,6 +61,7 @@ export default function IndexFunds() {
         This gives you broad diversification across thousands of companies and bonds at near-zero cost.
       </p>
 
+      <div className="table-wrap">
       <table>
         <thead>
           <tr>
@@ -91,6 +92,7 @@ export default function IndexFunds() {
           </tr>
         </tbody>
       </table>
+      </div>
 
       <SideNote>
         Expense ratios shown are annual costs as a percentage of assets. Fidelity's ZERO funds

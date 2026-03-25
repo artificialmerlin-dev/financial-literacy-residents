@@ -13,6 +13,7 @@ export default function Taxes() {
       <Rule />
 
       <h2>2026 Federal Tax Brackets (Single Filers)</h2>
+      <div className="table-wrap">
       <table>
         <thead>
           <tr>
@@ -30,6 +31,7 @@ export default function Taxes() {
           <tr><td>37%</td><td>Over $626,350</td></tr>
         </tbody>
       </table>
+      </div>
 
       <SideNote>
         The standard deduction for 2026 is $16,100 for single filers. This means a resident earning

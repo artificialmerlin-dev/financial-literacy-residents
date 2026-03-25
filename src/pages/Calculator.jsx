@@ -44,15 +44,9 @@ export default function Calculator() {
         <strong> 28-33 times annual expenses</strong> rather than 25 times.
       </p>
 
-      <SideNote>
-        The calculator above uses the savings rate curve from Mr. Money Mustache, which assumes a 5% real
-        (inflation-adjusted) return on investments, a 4% withdrawal rate, and starting from zero savings.
-        Your actual path may differ based on returns, spending changes, and existing assets.
-      </SideNote>
-
       <p className="source">
         Trinity Study: Cooley, Hubbard & Walz, "Retirement Savings: Choosing a Withdrawal Rate That Is
-        Sustainable," AAII Journal, 1998. Savings rate curve: Mr. Money Mustache, 2012.
+        Sustainable," AAII Journal, 1998.
       </p>
     </div>
   )

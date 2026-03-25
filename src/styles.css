@@ -160,11 +160,18 @@ hr.rule {
   margin: 2.5rem 0;
 }
 
+/* Tables — horizontally scrollable on mobile */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
   font-size: 0.95rem;
+  min-width: 480px;
 }
 
 th {
@@ -176,11 +183,13 @@ th {
   color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-card-border);
+  white-space: nowrap;
 }
 
 .priority-list {
@@ -224,7 +233,8 @@ td {
   margin: 1.5rem 0;
 }
 
-.calc-input label {
+.calc-input label,
+.calc-slider label {
   display: block;
   font-size: 0.85rem;
   color: var(--color-secondary);
@@ -247,6 +257,39 @@ td {
   border-color: var(--color-steel);
 }
 
+.calc-slider {
+  margin: 1.5rem 0 0;
+}
+
+.calc-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--color-rule);
+  outline: none;
+  border-radius: 0;
+}
+
+.calc-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--color-steel);
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+
+.calc-slider input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--color-steel);
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+
 .calc-results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -261,6 +304,10 @@ td {
 @media (max-width: 768px) {
   h1 {
     font-size: 1.7rem;
+  }
+
+  .nav-full-name {
+    display: none;
   }
 
   .stats-row {

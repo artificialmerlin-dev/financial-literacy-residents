@@ -35,13 +35,28 @@ export default function Nav() {
         alignItems: 'center',
       }}>
         <Link to="/" style={{
-          fontFamily: 'var(--font-main)',
-          fontWeight: 'bold',
-          fontSize: '1.1rem',
-          color: 'var(--color-text)',
           textDecoration: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.6rem',
         }}>
-          Financial Literacy for Residents
+          <span style={{
+            fontFamily: 'var(--font-main)',
+            fontWeight: 'bold',
+            fontSize: '1.3rem',
+            color: '#A4262C',
+            letterSpacing: '-0.01em',
+          }}>
+            FLR
+          </span>
+          <span className="nav-full-name" style={{
+            fontFamily: 'var(--font-main)',
+            fontSize: '0.85rem',
+            color: '#111111',
+            fontWeight: 'normal',
+          }}>
+            Financial Literacy for Residents
+          </span>
         </Link>
         <button
           onClick={() => setOpen(!open)}

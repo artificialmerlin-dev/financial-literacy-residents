@@ -1,51 +1,45 @@
 import { useState } from 'react'
 import Stat from './Stat'
 
-// Approximate years to FI based on savings rate (MMM curve data)
-// Source: Mr. Money Mustache "The Shockingly Simple Math Behind Early Retirement"
-// Assumes 5% real return on investments, 4% withdrawal rate
-function yearsToFI(savingsRate) {
-  if (savingsRate <= 0) return Infinity
-  if (savingsRate >= 100) return 0
-  const lookup = {
-    5: 66, 10: 51, 15: 43, 20: 37, 25: 32, 30: 28,
-    35: 25, 40: 22, 45: 19, 50: 17, 55: 14.5, 60: 12.5,
-    65: 10.5, 70: 8.5, 75: 7, 80: 5.5, 85: 4, 90: 3, 95: 2, 100: 0,
-  }
-  const keys = Object.keys(lookup).map(Number).sort((a, b) => a - b)
-  if (savingsRate <= 5) return lookup[5]
-  if (savingsRate >= 100) return 0
-  for (let i = 0; i < keys.length - 1; i++) {
-    if (savingsRate >= keys[i] && savingsRate <= keys[i + 1]) {
-      const ratio = (savingsRate - keys[i]) / (keys[i + 1] - keys[i])
-      return Math.round(lookup[keys[i]] + ratio * (lookup[keys[i + 1]] - lookup[keys[i]]))
-    }
-  }
-  return lookup[5]
-}
-
-function parseCurrency(val) {
-  return parseInt(val.replace(/[^0-9]/g, ''), 10) || 0
-}
-
 function formatCurrency(num) {
-  return '$' + num.toLocaleString()
+  return '$' + Math.round(num).toLocaleString()
 }
 
 export default function FICalculator() {
-  const [income, setIncome] = useState('65000')
-  const [expenses, setExpenses] = useState('50000')
-  const [saved, setSaved] = useState('0')
+  const [income, setIncome] = useState(65000)
+  const [expenses, setExpenses] = useState(50000)
+  const [saved, setSaved] = useState(0)
+  const [realReturn, setRealReturn] = useState(5)
 
-  const inc = parseCurrency(income)
-  const exp = parseCurrency(expenses)
-  const sav = parseCurrency(saved)
+  const annualSavings = income - expenses
+  const savingsRate = income > 0 && annualSavings > 0
+    ? Math.round((annualSavings / income) * 100)
+    : 0
+  const fiNumber = expenses * 25
+  const alreadyFI = saved >= fiNumber && fiNumber > 0
 
-  const annualSavings = Math.max(inc - exp, 0)
-  const savingsRate = inc > 0 ? Math.round((annualSavings / inc) * 100) : 0
-  const fiNumber = exp * 25
-  const remaining = Math.max(fiNumber - sav, 0)
-  const years = sav >= fiNumber ? 0 : yearsToFI(savingsRate)
+  let yearsDisplay
+  if (annualSavings <= 0) {
+    yearsDisplay = 'N/A'
+  } else if (alreadyFI) {
+    yearsDisplay = null // handled separately
+  } else {
+    const fiTarget = fiNumber - saved
+    const r = realReturn / 100
+    if (r === 0) {
+      yearsDisplay = (fiTarget / annualSavings).toFixed(1)
+    } else {
+      const years = Math.log((fiTarget * r / annualSavings) + 1) / Math.log(1 + r)
+      yearsDisplay = years > 0 ? years.toFixed(1) : '0.0'
+    }
+  }
+
+  const handleNumber = (setter) => (e) => {
+    const val = e.target.value
+    if (val === '') { setter(0); return }
+    const num = parseInt(val.replace(/[^0-9]/g, ''), 10)
+    if (!isNaN(num)) setter(num)
+  }
 
   return (
     <div>
@@ -54,8 +48,8 @@ export default function FICalculator() {
           <label>Annual income (gross)</label>
           <input
             type="text"
-            value={income}
-            onChange={(e) => setIncome(e.target.value)}
+            value={income || ''}
+            onChange={handleNumber(setIncome)}
             inputMode="numeric"
           />
         </div>
@@ -63,8 +57,8 @@ export default function FICalculator() {
           <label>Annual expenses</label>
           <input
             type="text"
-            value={expenses}
-            onChange={(e) => setExpenses(e.target.value)}
+            value={expenses || ''}
+            onChange={handleNumber(setExpenses)}
             inputMode="numeric"
           />
         </div>
@@ -72,16 +66,75 @@ export default function FICalculator() {
           <label>Already saved</label>
           <input
             type="text"
-            value={saved}
-            onChange={(e) => setSaved(e.target.value)}
+            value={saved || ''}
+            onChange={handleNumber(setSaved)}
             inputMode="numeric"
           />
         </div>
       </div>
+
+      <div className="calc-slider">
+        <label>Expected real return after inflation</label>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            step="0.5"
+            value={realReturn}
+            onChange={(e) => setRealReturn(parseFloat(e.target.value))}
+            style={{ flex: 1 }}
+          />
+          <span style={{
+            fontFamily: 'var(--font-main)',
+            fontSize: '1.1rem',
+            fontWeight: 600,
+            minWidth: '3rem',
+            textAlign: 'right',
+          }}>
+            {realReturn}%
+          </span>
+        </div>
+        <p style={{
+          fontStyle: 'italic',
+          fontSize: '0.8rem',
+          color: 'var(--color-secondary)',
+          marginTop: '0.35rem',
+          marginBottom: 0,
+        }}>
+          Real return = after inflation. U.S. stocks have historically averaged ~7% nominal, ~4-5% real.
+        </p>
+      </div>
+
       <div className="calc-results">
         <Stat value={`${savingsRate}%`} label="Savings rate" />
         <Stat value={formatCurrency(fiNumber)} label="FI number (25x expenses)" />
-        <Stat value={years === Infinity ? '---' : `~${years} yrs`} label="Approximate years to FI" />
+        <Stat
+          value={alreadyFI ? '0' : yearsDisplay}
+          label={alreadyFI
+            ? 'Already FI at this spending level'
+            : 'Approximate years to FI'}
+        />
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gap: '0.75rem',
+        marginTop: '0.5rem',
+        fontSize: '0.8rem',
+        color: 'var(--color-secondary)',
+        fontStyle: 'italic',
+        lineHeight: 1.5,
+      }}>
+        <p style={{ marginBottom: 0 }}>
+          FI number = annual expenses x 25. The portfolio size where you can withdraw 4% per year to cover expenses indefinitely.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          Based on the 4% safe withdrawal rate (Trinity Study, 1998). For 40+ year horizons, 3-3.5% is more conservative.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          Real return means after inflation. If the market returns 8% and inflation is 3%, your real return is 5%.
+        </p>
       </div>
     </div>
   )
