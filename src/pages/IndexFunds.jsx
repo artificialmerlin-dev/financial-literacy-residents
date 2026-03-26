@@ -2,10 +2,17 @@ import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
 
 export default function IndexFunds() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Why Index Funds Beat Stock Picking — SPIVA Data for Physicians"
+        description="94% of actively managed funds lose to index funds over 20 years. Learn about the three-fund portfolio, target-date funds, and the SPIVA scorecard data every medical resident should know."
+        path="/index-funds"
+      />
       <span className="section-number">02</span>
       <h1>Index Funds</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>6 min read</p>
@@ -143,6 +150,12 @@ export default function IndexFunds() {
       <p className="source">
         Fund data: Vanguard, Fidelity, and Charles Schwab, as of early 2026. SPIVA data: S&P Dow Jones Indices.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/fees', label: 'The Fee Problem' },
+        { to: '/calculator', label: 'FI Calculator' },
+        { to: '/accounts', label: 'Retirement Accounts' },
+      ]} />
+    </article>
   )
 }

@@ -1,9 +1,16 @@
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
 
 export default function Taxes() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Tax Strategy for Medical Residents — Brackets, Deductions & Roth Contributions 2026"
+        description="2026 federal tax brackets, standard deduction, effective tax rates for residents, student loan interest deduction, and why Roth contributions matter during training."
+        path="/taxes"
+      />
       <span className="section-number">04</span>
       <h1>Taxes</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>5 min read</p>
@@ -109,6 +116,12 @@ export default function Taxes() {
       <p className="source">
         2026 brackets and standard deduction: IRS Revenue Procedure 2025-11.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/accounts', label: 'Retirement Accounts' },
+        { to: '/loans', label: 'Student Loans' },
+        { to: '/calculator', label: 'FI Calculator' },
+      ]} />
+    </article>
   )
 }

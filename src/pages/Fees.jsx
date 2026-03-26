@@ -1,10 +1,29 @@
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
+
+const faq = [
+  {
+    question: 'How much does a 1% financial advisor fee cost over a career?',
+    answer: '$1.34 million over a 35-year physician career, assuming $40K/year contributions at 7% return.',
+  },
+  {
+    question: 'What is a fee-only fiduciary financial advisor?',
+    answer: 'A fiduciary is legally required to act in your best interest. Fee-only means they are paid directly by you (flat fee or hourly), not by commissions on products they sell. Fewer than 2% of financial advisors meet this standard.',
+  },
+]
 
 export default function Fees() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="How 1% Advisory Fees Cost Physicians $1.34 Million — Fee-Only Alternatives"
+        description="A 1% financial advisor fee costs a physician $1.34 million over a 35-year career. Learn the difference between fee-only and fee-based advisors, and find fiduciary directories."
+        path="/fees"
+        faq={faq}
+      />
       <span className="section-number">03</span>
       <h1>The Fee Problem</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>4 min read</p>
@@ -84,6 +103,12 @@ export default function Fees() {
       <p className="source">
         Fee impact calculations assume annual compounding. Advisor prevalence data: Investment News, 2024 survey.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/accounts', label: 'Retirement Accounts' },
+        { to: '/resources', label: 'Resources' },
+      ]} />
+    </article>
   )
 }

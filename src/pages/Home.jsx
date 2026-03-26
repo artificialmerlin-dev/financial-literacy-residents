@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Stat from '../components/Stat'
+import PageSEO from '../components/PageSEO'
 
 const sections = [
   { path: '/accounts', number: '01', title: 'Retirement Accounts', desc: 'Roth vs Traditional, 403(b), 457(b), IRA, HSA' },
@@ -15,7 +16,12 @@ const sections = [
 
 export default function Home() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Financial Literacy for Medical Residents — Retirement, Investing, Loans & Insurance Guide"
+        description="A comprehensive financial literacy guide for medical residents covering retirement accounts, index funds, student loans, insurance, taxes, and more. Built on IRS data, the SPIVA Scorecard, and the Trinity Study."
+        path="/"
+      />
       <h1>Financial Literacy for Medical Residents</h1>
       <p className="subtitle">
         A guide to building wealth during training — and the mistakes to avoid.
@@ -29,12 +35,14 @@ export default function Home() {
         professional for your specific situation.
       </div>
 
-      <div className="stats-row">
-        <Stat value="7.4/10" label="Avg resident financial stress" />
-        <Stat value="$303K" label="Avg resident loan balance" />
-        <Stat value="94%" label="of stock-pickers who lose to a simple index fund over 20 years" />
-        <Stat value="$1.34M" label="Cost of 1% advisory fee" />
-      </div>
+      <section>
+        <div className="stats-row">
+          <Stat value="7.4/10" label="Avg resident financial stress" />
+          <Stat value="$303K" label="Avg resident loan balance" />
+          <Stat value="94%" label="of stock-pickers who lose to a simple index fund over 20 years" />
+          <Stat value="$1.34M" label="Cost of 1% advisory fee" />
+        </div>
+      </section>
 
       <div style={{
         borderLeft: '3px solid var(--color-green)',
@@ -53,29 +61,48 @@ export default function Home() {
 
       <hr className="rule" />
 
-      <div className="section-grid">
-        {sections.map(({ path, number, title, desc }) => (
-          <Link
-            key={path}
-            to={path}
-            style={{
-              display: 'block',
-              border: '1px solid var(--color-card-border)',
-              backgroundColor: 'var(--color-card-bg)',
-              padding: '1.25rem 1.5rem',
-              textDecoration: 'none',
-              color: 'var(--color-text)',
-              transition: 'border-color 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-rule)'}
-            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--color-card-border)'}
-          >
-            <span className="section-number">{number}</span>
-            <span style={{ fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>{title}</span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic' }}>{desc}</span>
-          </Link>
-        ))}
-      </div>
-    </div>
+      <section>
+        <div className="section-grid">
+          {sections.map(({ path, number, title, desc }) => (
+            <Link
+              key={path}
+              to={path}
+              style={{
+                display: 'block',
+                border: '1px solid var(--color-card-border)',
+                backgroundColor: 'var(--color-card-bg)',
+                padding: '1.25rem 1.5rem',
+                textDecoration: 'none',
+                color: 'var(--color-text)',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-rule)'}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--color-card-border)'}
+            >
+              <span className="section-number">{number}</span>
+              <span style={{ fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>{title}</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic' }}>{desc}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section style={{
+        marginTop: '2.5rem',
+        paddingTop: '1.5rem',
+        borderTop: '1px solid var(--color-rule)',
+        fontSize: '0.85rem',
+        color: 'var(--color-secondary)',
+        fontStyle: 'italic',
+        lineHeight: 1.6,
+      }}>
+        <p style={{ marginBottom: 0 }}>
+          Created by a radiology resident. Content is based on IRS.gov data, the S&P SPIVA
+          Scorecard, the Trinity Study, and physician finance resources including White Coat
+          Investor, Bogleheads, and Student Loan Planner. This is educational content, not
+          financial advice.
+        </p>
+      </section>
+    </article>
   )
 }

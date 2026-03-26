@@ -1,9 +1,16 @@
 import Card from '../components/Card'
 import Rule from '../components/Rule'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
 
 export default function Resources() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Best Financial Literacy Resources for Doctors — White Coat Investor & More"
+        description="Curated list of the best financial literacy resources for medical residents: White Coat Investor, Bogleheads, ChooseFI, Student Loan Planner, and essential books on personal finance."
+        path="/resources"
+      />
       <span className="section-number">09</span>
       <h1>Resources</h1>
       <p className="subtitle">
@@ -140,6 +147,12 @@ export default function Resources() {
           </p>
         </Card>
       </div>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/accounts', label: 'Retirement Accounts' },
+        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/loans', label: 'Student Loans' },
+      ]} />
+    </article>
   )
 }

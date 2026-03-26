@@ -2,10 +2,33 @@ import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
+
+const faq = [
+  {
+    question: 'What is the Roth IRA contribution limit for 2026?',
+    answer: 'The 2026 Roth IRA contribution limit is $7,500. The income phase-out for single filers begins at $153,000.',
+  },
+  {
+    question: 'Should medical residents contribute to Roth or Traditional retirement accounts?',
+    answer: 'Most residents should choose Roth contributions. Residents are in the 22% tax bracket on a roughly $65,000 salary. As attendings earning $400,000 or more, they will be in the 32-37% bracket. Paying taxes now at the lower rate and getting tax-free growth is almost always the better math.',
+  },
+  {
+    question: 'What is the 403(b) contribution limit for 2026?',
+    answer: 'The 2026 employee contribution limit for 403(b) plans is $24,500.',
+  },
+]
 
 export default function Accounts() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Retirement Accounts for Medical Residents — Roth IRA, 403(b), HSA Limits 2026"
+        description="Complete guide to retirement accounts for medical residents: Roth IRA, 403(b), 457(b), HSA contribution limits for 2026, priority order, and why Roth wins during residency."
+        path="/accounts"
+        faq={faq}
+      />
       <span className="section-number">01</span>
       <h1>Retirement Accounts</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
@@ -173,6 +196,12 @@ export default function Accounts() {
       <p className="source">
         Contribution limits: IRS Revenue Procedure 2025-11. Phase-out thresholds: IRS Notice 2025-75.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/taxes', label: 'Taxes' },
+        { to: '/fees', label: 'The Fee Problem' },
+      ]} />
+    </article>
   )
 }

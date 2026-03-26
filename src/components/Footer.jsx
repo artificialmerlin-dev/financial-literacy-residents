@@ -8,20 +8,24 @@ export default function Footer() {
       textAlign: 'center',
     }}>
       <p style={{
-        fontSize: '0.85rem',
+        fontSize: '0.8rem',
         color: 'var(--color-secondary)',
         fontStyle: 'italic',
-        marginBottom: '0.5rem',
+        marginBottom: '0.75rem',
+        lineHeight: 1.6,
       }}>
-        Educational content for medical residents &middot; 2026
+        Created by a radiology resident. Content is based on IRS.gov data, the S&P SPIVA
+        Scorecard, the Trinity Study, and physician finance resources including White Coat
+        Investor, Bogleheads, and Student Loan Planner. This is educational content, not
+        financial advice.
       </p>
       <p style={{
-        fontSize: '0.8rem',
+        fontSize: '0.75rem',
         color: 'var(--color-source)',
         fontStyle: 'italic',
         marginBottom: 0,
       }}>
-        This is educational content, not financial advice.
+        Educational content for medical residents &middot; 2026
       </p>
     </footer>
   )

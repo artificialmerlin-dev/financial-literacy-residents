@@ -3,10 +3,33 @@ import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
 import PSLFCalculator from '../components/PSLFCalculator'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
+
+const faq = [
+  {
+    question: 'Should doctors do PSLF or pay off student loans?',
+    answer: 'It depends on your debt-to-income ratio and career plans. If your loans exceed 2x your expected attending salary and you plan to work at a nonprofit or academic hospital, PSLF is usually the better path. If your loans are lower relative to income and you want to be debt-free quickly, aggressive repayment as an attending makes sense.',
+  },
+  {
+    question: 'What is the SAVE plan status in 2026?',
+    answer: 'The SAVE plan was officially ended by the Eighth Circuit Court of Appeals on March 9, 2026. Borrowers must switch to IBR, PAYE, or the new RAP plan.',
+  },
+  {
+    question: 'What is the RAP student loan plan?',
+    answer: 'RAP (Repayment Assistance Plan) is a new income-driven repayment plan effective July 1, 2026. Payments are 1-10% of full AGI with forgiveness after 30 years.',
+  },
+]
 
 export default function Loans() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Student Loan Repayment for Doctors — PSLF vs Aggressive Payoff Calculator"
+        description="Compare PSLF forgiveness vs aggressive repayment for medical residents. Interactive calculator, IDR plan comparison (PAYE, IBR, RAP), and the July 2026 PSLF deadline explained."
+        path="/loans"
+        faq={faq}
+      />
       <span className="section-number">05</span>
       <h1>Student Loans</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
@@ -188,6 +211,12 @@ export default function Loans() {
         Median debt: AAMC Graduation Questionnaire, 2025. PSLF rules: Department of Education.
         SAVE ruling: Eighth Circuit, March 2026. OBBBA provisions: Congressional Budget Office analysis.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/taxes', label: 'Taxes' },
+        { to: '/resources', label: 'Resources' },
+        { to: '/calculator', label: 'FI Calculator' },
+      ]} />
+    </article>
   )
 }

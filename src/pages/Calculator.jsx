@@ -1,10 +1,29 @@
 import FICalculator from '../components/FICalculator'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
+
+const faq = [
+  {
+    question: 'What is the 25x rule for retirement?',
+    answer: 'The 25x rule says you need 25 times your annual expenses saved to retire. If you spend $100,000 per year, your target is $2.5 million. This is the inverse of the 4% withdrawal rate.',
+  },
+  {
+    question: 'What is the 4% rule?',
+    answer: 'The 4% rule says you can withdraw 4% of your portfolio in your first year of retirement, then adjust for inflation each year, and have a high probability of not running out of money over 30 years. It comes from the 1998 Trinity Study. For longer retirements, a 3-3.5% rate is safer.',
+  },
+]
 
 export default function Calculator() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Financial Independence Calculator for Physicians — 25x Rule & 4% Withdrawal Rate"
+        description="Interactive FI calculator for medical residents and physicians. Enter your income, expenses, and savings to see your FI number, savings rate, and years to financial independence."
+        path="/calculator"
+        faq={faq}
+      />
       <span className="section-number">08</span>
       <h1>FI Calculator</h1>
       <p className="subtitle">
@@ -94,6 +113,12 @@ export default function Calculator() {
         Trinity Study: Cooley, Hubbard & Walz, "Retirement Savings: Choosing a Withdrawal Rate That Is
         Sustainable," AAII Journal, 1998.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/fees', label: 'The Fee Problem' },
+        { to: '/resources', label: 'Resources' },
+      ]} />
+    </article>
   )
 }

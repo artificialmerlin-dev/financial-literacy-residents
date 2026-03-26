@@ -2,10 +2,33 @@ import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PageSEO from '../components/PageSEO'
+import RelatedLinks from '../components/RelatedLinks'
+
+const faq = [
+  {
+    question: 'Do medical residents need disability insurance?',
+    answer: 'Yes if you depend on your income, have debt, or anyone depends on you financially. One in four of today\'s 20-year-olds will become disabled before retirement, and 90% of disabilities are from illness, not accidents.',
+  },
+  {
+    question: 'What is own-occupation disability insurance?',
+    answer: 'Own-occupation disability insurance pays benefits if you cannot work in your specific medical specialty, even if you could work in another field. This is critical for physicians — a surgeon who loses fine motor skills needs a policy that covers inability to perform surgery, not just inability to work at all.',
+  },
+  {
+    question: 'What is the difference between term and whole life insurance?',
+    answer: 'Term life insurance covers you for a set period (usually 20-30 years) at low cost — roughly $25/month for $500K coverage. Whole life insurance covers you permanently but costs 10-20x more — roughly $540/month for the same coverage. For medical residents, term is almost always the right choice. Buy term and invest the difference.',
+  },
+]
 
 export default function Insurance() {
   return (
-    <div className="page">
+    <article className="page">
+      <PageSEO
+        title="Disability Insurance for Residents — Own-Occupation Coverage & the Big 5 Carriers"
+        description="Why medical residents need own-occupation disability insurance, the five riders to insist on, the Big 5 carriers, and why term life beats whole life for physicians."
+        path="/insurance"
+        faq={faq}
+      />
       <span className="section-number">06</span>
       <h1>Insurance</h1>
       <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
@@ -138,6 +161,12 @@ export default function Insurance() {
         Disability statistics: Social Security Administration. Premium estimates are illustrative
         and vary by specialty, age, gender, state, and health status.
       </p>
-    </div>
+
+      <RelatedLinks links={[
+        { to: '/fees', label: 'The Fee Problem' },
+        { to: '/accounts', label: 'Retirement Accounts' },
+        { to: '/loans', label: 'Student Loans' },
+      ]} />
+    </article>
   )
 }
