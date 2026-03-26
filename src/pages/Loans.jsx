@@ -2,6 +2,7 @@ import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
+import PSLFCalculator from '../components/PSLFCalculator'
 
 export default function Loans() {
   return (
@@ -132,15 +133,56 @@ export default function Loans() {
 
       <Rule />
 
-      <h2>Getting Professional Help</h2>
-      <p>
-        <strong><a href="https://studentloanplanner.com" target="_blank" rel="noopener noreferrer">Student Loan Planner</a></strong> (studentloanplanner.com), founded by Travis Hornsby,
-        offers flat-fee loan consultations for <strong>$595</strong>. They've consulted on over
-        <strong> $5 billion</strong> in student debt across 22,000+ clients, roughly 75% of whom are
-        medical professionals, with an average reported savings of <strong>$80,000+</strong> per borrower.
-        For a six-figure loan decision, this is one of the highest-return professional consultations
-        available.
-      </p>
+      <h2>Free tools to figure out your plan</h2>
+
+      <div style={{ display: 'grid', gap: '1rem', marginTop: '1.5rem' }}>
+        <Card>
+          <h3 style={{ marginTop: 0 }}>
+            <a href="https://studentaid.gov/loan-simulator" target="_blank" rel="noopener noreferrer">
+              Federal Student Aid Loan Simulator
+            </a>
+          </h3>
+          <p style={{ marginBottom: 0 }}>
+            The official government tool. Connects to your actual loan data, compares all
+            repayment plans, shows estimated monthly payments and total cost. Start here.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 style={{ marginTop: 0 }}>
+            <a href="https://students-residents.aamc.org/financial-aid-resources/medloans-organizer-and-calculator-mloc" target="_blank" rel="noopener noreferrer">
+              AAMC MedLoans Organizer (MLOC)
+            </a>
+          </h3>
+          <p style={{ marginBottom: 0 }}>
+            Built specifically for medical students and residents. Free for all trainees at
+            AAMC member schools. Upload your federal loan data and compare repayment scenarios.
+          </p>
+        </Card>
+
+        <Card>
+          <h3 style={{ marginTop: 0 }}>
+            <a href="https://www.studentloanplanner.com/free-student-loan-calculator/" target="_blank" rel="noopener noreferrer">
+              Student Loan Planner Calculator
+            </a>
+          </h3>
+          <p style={{ marginBottom: 0 }}>
+            Compares PSLF, RAP, IBR, PAYE, and refinancing scenarios side by side. Designed
+            for physicians. Free to use — no account required.
+          </p>
+        </Card>
+      </div>
+
+      <SideNote>
+        For a personalized analysis of a complex loan situation (married filing separately,
+        multiple loan types, fellowship considerations), a paid consultation with a student
+        loan specialist may be worth it. Student Loan Planner and Dream Bigger Financial are
+        two services used by physicians.
+      </SideNote>
+
+      <Rule />
+
+      <PSLFCalculator />
 
       <p className="source">
         Median debt: AAMC Graduation Questionnaire, 2025. PSLF rules: Department of Education.
