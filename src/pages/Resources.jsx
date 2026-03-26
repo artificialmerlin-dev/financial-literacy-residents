@@ -150,7 +150,7 @@ export default function Resources() {
 
       <RelatedLinks links={[
         { to: '/accounts', label: 'Retirement Accounts' },
-        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/investing', label: 'Investing' },
         { to: '/loans', label: 'Student Loans' },
       ]} />
     </article>

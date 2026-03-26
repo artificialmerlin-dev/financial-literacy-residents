@@ -115,7 +115,7 @@ export default function Calculator() {
       </p>
 
       <RelatedLinks links={[
-        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/investing', label: 'Investing' },
         { to: '/fees', label: 'The Fee Problem' },
         { to: '/resources', label: 'Resources' },
       ]} />

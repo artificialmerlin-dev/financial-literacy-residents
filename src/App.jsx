@@ -30,7 +30,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/accounts" element={<Accounts />} />
-          <Route path="/index-funds" element={<IndexFunds />} />
+          <Route path="/investing" element={<IndexFunds />} />
           <Route path="/fees" element={<Fees />} />
           <Route path="/taxes" element={<Taxes />} />
           <Route path="/loans" element={<Loans />} />

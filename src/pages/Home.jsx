@@ -4,7 +4,7 @@ import PageSEO from '../components/PageSEO'
 
 const sections = [
   { path: '/accounts', number: '01', title: 'Retirement Accounts', desc: 'Roth vs Traditional, 403(b), 457(b), IRA, HSA' },
-  { path: '/index-funds', number: '02', title: 'Index Funds', desc: 'Why 94% of stock-pickers lose, and what to buy instead' },
+  { path: '/investing', number: '02', title: 'Investing', desc: 'Why 94% of stock-pickers lose, and what to buy instead' },
   { path: '/fees', number: '03', title: 'The Fee Problem', desc: 'The $1.34M cost of a 1% advisory fee' },
   { path: '/taxes', number: '04', title: 'Taxes', desc: '2026 brackets, deductions, and key moves' },
   { path: '/loans', number: '05', title: 'Student Loans', desc: 'PSLF, IDR plans, and the July 2026 deadline' },
@@ -53,7 +53,7 @@ export default function Home() {
         <p style={{ marginBottom: 0 }}>
           <strong>New to all of this?</strong> Start with these three pages:{' '}
           <Link to="/accounts">Retirement Accounts</Link> &rarr;{' '}
-          <Link to="/index-funds">Index Funds</Link> &rarr;{' '}
+          <Link to="/investing">Investing</Link> &rarr;{' '}
           <Link to="/fees">The Fee Problem</Link>.
           Everything else builds on those.
         </p>

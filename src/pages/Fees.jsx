@@ -105,7 +105,7 @@ export default function Fees() {
       </p>
 
       <RelatedLinks links={[
-        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/investing', label: 'Investing' },
         { to: '/accounts', label: 'Retirement Accounts' },
         { to: '/resources', label: 'Resources' },
       ]} />

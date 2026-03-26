@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 const sections = [
   { path: '/', label: 'Home' },
   { path: '/accounts', label: 'Retirement Accounts' },
-  { path: '/index-funds', label: 'Index Funds' },
+  { path: '/investing', label: 'Investing' },
   { path: '/fees', label: 'The Fee Problem' },
   { path: '/taxes', label: 'Taxes' },
   { path: '/loans', label: 'Student Loans' },

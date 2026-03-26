@@ -198,7 +198,7 @@ export default function Accounts() {
       </p>
 
       <RelatedLinks links={[
-        { to: '/index-funds', label: 'Index Funds' },
+        { to: '/investing', label: 'Investing' },
         { to: '/taxes', label: 'Taxes' },
         { to: '/fees', label: 'The Fee Problem' },
       ]} />

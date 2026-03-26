@@ -5,24 +5,139 @@ import SideNote from '../components/SideNote'
 import PageSEO from '../components/PageSEO'
 import RelatedLinks from '../components/RelatedLinks'
 
+const faq = [
+  {
+    question: 'Should doctors pick individual stocks?',
+    answer: 'The evidence strongly suggests no. Over 20 years, 94% of professional fund managers — people who do this full-time with dedicated research teams — fail to beat a simple index fund. Individual investors fare even worse due to behavioral mistakes like panic selling and performance chasing. Most physicians are better served by low-cost index funds or target-date funds.',
+  },
+  {
+    question: 'What is the best investment for medical residents?',
+    answer: 'For most residents, the simplest and most effective approach is a target-date retirement fund (like Vanguard Target Retirement 2065) or a total U.S. stock market index fund (like VTSAX or FZROX). These provide broad diversification at near-zero cost and require no ongoing management.',
+  },
+  {
+    question: 'What is the three-fund portfolio?',
+    answer: 'The three-fund portfolio is a simple investing strategy using three index funds: a U.S. total stock market fund, an international stock market fund, and a U.S. bond fund. Together, these hold approximately 15,000 securities worldwide. It\'s recommended by the Bogleheads investing community and most physician finance experts.',
+  },
+]
+
 export default function IndexFunds() {
   return (
     <article className="page">
       <PageSEO
-        title="Why Index Funds Beat Stock Picking — SPIVA Data for Physicians"
-        description="94% of actively managed funds lose to index funds over 20 years. Learn about the three-fund portfolio, target-date funds, and the SPIVA scorecard data every medical resident should know."
-        path="/index-funds"
+        title="Investing for Medical Residents — Why Index Funds Beat Stock Picking"
+        description="Why 94% of professional stock pickers lose to index funds, the behavior gap that costs investors thousands, and exactly what to buy in your retirement accounts as a medical resident."
+        path="/investing"
+        faq={faq}
       />
       <span className="section-number">02</span>
-      <h1>Index Funds</h1>
-      <p className="caption" style={{ marginBottom: '0.5rem' }}>6 min read</p>
+      <h1>Investing</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>8 min read</p>
       <p className="subtitle">
-        The case for owning the entire market — and paying almost nothing to do it.
+        You need to invest. The only question is how.
+      </p>
+
+      <Rule />
+
+      <h2>Why not just pick stocks?</h2>
+
+      <p>
+        Before we talk about what to invest in, let's look at what the professionals achieve.
+        These are full-time fund managers with teams of analysts, proprietary data, Bloomberg
+        terminals, and decades of experience. They wake up every morning with one job: beat
+        the market. And the data on how they perform is comprehensive, public, and devastating.
+      </p>
+      <p>
+        The S&P SPIVA Scorecard (an independent study that tracks how professional money managers
+        perform against simple index funds) has been published semi-annually for two decades. Over
+        one year, <strong>54%</strong> of actively managed large-cap funds underperform their
+        benchmark index. Over five years, <strong>77%</strong>. Over ten, <strong>87%</strong>.
+        Over twenty years, <strong>94%</strong> fail to beat the index. On a risk-adjusted basis,
+        <strong> 97%</strong> underperform over twenty years. If people who do this for a living
+        can't consistently beat the market, the odds that you'll do it in your spare time between
+        overnight calls are very low.
+      </p>
+
+      <h3>The behavior gap</h3>
+      <p>
+        It gets worse. Even when individual investors buy good funds, they consistently
+        underperform those very funds because of behavioral mistakes — buying after prices have
+        risen, selling after they've fallen, chasing hot tips from colleagues, and panic-selling
+        during downturns. Research from Dalbar and others estimates this "behavior gap" costs the
+        average investor <strong>1-3% annually</strong> over long periods. That may sound small, but
+        over a 30-year career it compounds into hundreds of thousands of dollars in lost wealth.
+        The problem isn't the investment. The problem is the investor.
+      </p>
+
+      <h3>Survivorship bias</h3>
+      <p>
+        You'll hear stories — an attending who bought Tesla at $30, a friend who doubled their
+        money on Nvidia. You won't hear about the losses. For every person who picked a winning
+        stock, there are dozens who picked losers, or sold too early, or held too long. The winners
+        tell their stories at conferences. The losers stay quiet. This creates a distorted picture
+        of how common stock-picking success actually is. In the same way that you don't judge a
+        drug's efficacy by asking only the patients who got better, you can't judge an investment
+        strategy by listening only to those who got lucky.
+      </p>
+
+      <h3>The time argument</h3>
+      <p>
+        You're working 60-80 hours a week. Even if stock picking could work in theory, it
+        requires constant research, monitoring, and decision-making. The evidence says that even
+        with unlimited time, it doesn't work for the vast majority of professionals. But you
+        don't have unlimited time — and every hour spent researching individual stocks is an hour
+        that could go toward your patients, your training, your relationships, or your sleep.
+      </p>
+
+      <h3>The permission to play</h3>
+      <p>
+        If you genuinely enjoy researching stocks and want to allocate 5-10% of your portfolio to
+        individual picks as a hobby, that's a reasonable approach — as long as the other 90-95% is
+        in low-cost index funds. Treat it as entertainment spending with upside potential, not as
+        your core wealth-building strategy.
+      </p>
+
+      <Rule />
+
+      <h2>What the data says</h2>
+
+      <p>
+        Two datasets tell the story. The first tracks every professional fund manager in America.
+        The second tracks the most famous investor alive.
       </p>
 
       <Stat value="94%" label="of actively managed large-cap funds underperformed their index over twenty years" />
 
+      <p>
+        These are not cherry-picked numbers. The SPIVA Scorecard is the most comprehensive,
+        survivorship-bias-free dataset on active fund performance in existence. It accounts for
+        funds that closed or merged (which disproportionately happens to poor performers), so
+        the real failure rate may be even higher than the headline figure suggests.
+      </p>
+      <p className="source">Source: S&P SPIVA U.S. Scorecard, 2005-2024.</p>
+
+      <h3>The Million-Dollar Bet</h3>
+      <p>
+        In 2008, Warren Buffett made a public wager of one million dollars: he bet that a simple
+        S&P 500 index fund would outperform a hand-picked portfolio of five funds-of-hedge-funds
+        over ten years. The hedge fund side was chosen by Ted Seides, a professional asset manager.
+      </p>
+      <p>
+        The result was not close. The index fund returned <strong>7.1% annualized</strong>, turning
+        $1 million into roughly $1.854 million. The hedge fund portfolio returned <strong>2.2%
+        annualized</strong>, reaching just $1.22 million. After fees, the hedge funds captured only
+        a fraction of the market's gains.
+      </p>
+
+      <div className="quote-block">
+        <p style={{ marginBottom: '0.5rem' }}>
+          "Performance comes, performance goes. Fees never falter."
+        </p>
+        <p className="quote-attr">— Warren Buffett, 2018 Berkshire Hathaway annual letter</p>
+      </div>
+
       <Rule />
+
+      <h2>What to actually buy</h2>
 
       <div style={{
         borderLeft: '3px solid var(--color-green)',
@@ -54,51 +169,9 @@ export default function IndexFunds() {
         Either is a great choice for a resident with 30+ years until retirement.
       </p>
 
-      <Rule />
-
-      <h2>The SPIVA Scorecard</h2>
+      <h3>The Three-Fund Portfolio</h3>
       <p>
-        The S&P SPIVA Scorecard (an independent study that tracks how professional money managers
-        perform against simple index funds) is published semi-annually by Standard & Poor's.
-        The results are consistent and devastating for active management.
-        Over one year, <strong>54%</strong> of actively managed large-cap funds underperform.
-        Over five years, <strong>77%</strong>. Over ten, <strong>87%</strong>. Over fifteen, <strong>92%</strong>.
-        Over twenty years, <strong>94%</strong> of active funds fail to beat the index. On a risk-adjusted
-        basis, <strong>97%</strong> underperform over twenty years.
-      </p>
-      <p>
-        These are not cherry-picked numbers. This is the most comprehensive, survivorship-bias-free
-        dataset on active fund performance in existence.
-      </p>
-      <p className="source">Source: S&P SPIVA U.S. Scorecard, 2005-2024.</p>
-
-      <Rule />
-
-      <h2>The Million-Dollar Bet</h2>
-      <p>
-        In 2008, Warren Buffett made a public wager of one million dollars: he bet that a simple
-        S&P 500 index fund would outperform a hand-picked portfolio of five funds-of-hedge-funds
-        over ten years. The hedge fund side was chosen by Ted Seides, a professional asset manager.
-      </p>
-      <p>
-        The result was not close. The index fund returned <strong>7.1% annualized</strong>, turning
-        $1 million into roughly $1.854 million. The hedge fund portfolio returned <strong>2.2%
-        annualized</strong>, reaching just $1.22 million. After fees, the hedge funds captured only
-        a fraction of the market's gains.
-      </p>
-
-      <div className="quote-block">
-        <p style={{ marginBottom: '0.5rem' }}>
-          "Performance comes, performance goes. Fees never falter."
-        </p>
-        <p className="quote-attr">— Warren Buffett, 2018 Berkshire Hathaway annual letter</p>
-      </div>
-
-      <Rule />
-
-      <h2>The Three-Fund Portfolio</h2>
-      <p>
-        If you want more control, the simplest evidence-based investment strategy requires just three funds: a U.S. total
+        If you want slightly more control, the simplest evidence-based investment strategy requires just three funds: a U.S. total
         stock market index, an international stock index, and a U.S. total bond market index.
         This gives you broad diversification across thousands of companies and bonds at near-zero cost.
       </p>
@@ -149,6 +222,7 @@ export default function IndexFunds() {
 
       <p className="source">
         Fund data: Vanguard, Fidelity, and Charles Schwab, as of early 2026. SPIVA data: S&P Dow Jones Indices.
+        Behavior gap research: Dalbar Quantitative Analysis of Investor Behavior.
       </p>
 
       <RelatedLinks links={[
