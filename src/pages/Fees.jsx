@@ -7,6 +7,7 @@ export default function Fees() {
     <div className="page">
       <span className="section-number">03</span>
       <h1>The Fee Problem</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>4 min read</p>
       <p className="subtitle">
         The most important number in investing is the one your advisor hopes you never calculate.
       </p>
@@ -20,7 +21,8 @@ export default function Fees() {
         Consider a physician who contributes <strong>$40,000 per year</strong> to investment accounts over
         a <strong>35-year career</strong>, earning a <strong>7% gross return</strong>. Without any advisory
         fee, this portfolio grows to approximately <strong>$5.9 million</strong>. With a 1% annual advisory
-        fee (reducing net returns to 6%), the portfolio reaches roughly <strong>$4.6 million</strong>.
+        fee — often called an AUM (assets under management) fee — reducing net returns to 6%, the portfolio
+        reaches roughly <strong>$4.6 million</strong>.
         The difference — <strong>$1.34 million</strong> — goes to the advisor.
       </p>
       <p>
@@ -44,6 +46,11 @@ export default function Fees() {
         with no commissions, kickbacks, or revenue sharing from fund companies. Fewer than <strong>2%</strong> of
         financial advisors in the United States are fee-only fiduciaries.
       </p>
+      <p>
+        A <strong>fiduciary</strong> is legally required to act in your best interest. Most financial
+        advisors are not fiduciaries — they're salespeople who earn commissions on the products
+        they recommend to you.
+      </p>
 
       <Rule />
 
@@ -65,6 +72,13 @@ export default function Fees() {
       <p>
         <strong><a href="https://xyplanningnetwork.com" target="_blank" rel="noopener noreferrer">XY Planning Network</a></strong> (xyplanningnetwork.com) — fee-only advisors who specialize
         in working with Gen X and Gen Y clients, many of whom serve physicians.
+      </p>
+
+      <p>
+        <strong>You probably don't need a financial advisor during residency</strong> — a target-date fund
+        or total stock market index fund handles everything. These directories are useful later, when
+        you're an attending with a more complex financial picture (multiple income sources, real estate,
+        practice ownership).
       </p>
 
       <p className="source">

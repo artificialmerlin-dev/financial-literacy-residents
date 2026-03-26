@@ -10,6 +10,19 @@ export default function Resources() {
         The best physician finance education is free. Start here.
       </p>
 
+      <div style={{
+        borderLeft: '3px solid var(--color-green)',
+        padding: '1.25rem 1.5rem',
+        marginBottom: '2rem',
+        backgroundColor: 'var(--color-card-bg)',
+      }}>
+        <p style={{ marginBottom: 0 }}>
+          <strong>If you read one thing,</strong> sign up for the{' '}
+          <a href="https://whitecoatinvestor.com" target="_blank" rel="noopener noreferrer">White Coat Investor's</a> free
+          12-week email boot camp. It covers everything on this site and more.
+        </p>
+      </div>
+
       <Rule />
 
       <h2>Websites and Communities</h2>
@@ -34,7 +47,7 @@ export default function Resources() {
           </p>
           <p style={{ marginBottom: 0 }}>
             Detailed calculators, a step-by-step Backdoor Roth IRA guide, and a physician's
-            perspective on financial independence and early retirement.
+            perspective on financial independence (FI) and early retirement.
           </p>
         </Card>
 
@@ -68,7 +81,7 @@ export default function Resources() {
           </p>
           <p style={{ marginBottom: 0 }}>
             Founded by Travis Hornsby. Offers flat-fee loan strategy consultations ($595) and
-            free educational content on federal repayment plans, PSLF, and refinancing.
+            free educational content on federal repayment plans, PSLF (Public Service Loan Forgiveness), and refinancing.
           </p>
         </Card>
 

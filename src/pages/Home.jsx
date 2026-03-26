@@ -3,7 +3,7 @@ import Stat from '../components/Stat'
 
 const sections = [
   { path: '/accounts', number: '01', title: 'Retirement Accounts', desc: 'Roth vs Traditional, 403(b), 457(b), IRA, HSA' },
-  { path: '/index-funds', number: '02', title: 'Index Funds', desc: 'Why 94% of active funds lose, and what to buy instead' },
+  { path: '/index-funds', number: '02', title: 'Index Funds', desc: 'Why 94% of stock-pickers lose, and what to buy instead' },
   { path: '/fees', number: '03', title: 'The Fee Problem', desc: 'The $1.34M cost of a 1% advisory fee' },
   { path: '/taxes', number: '04', title: 'Taxes', desc: '2026 brackets, deductions, and key moves' },
   { path: '/loans', number: '05', title: 'Student Loans', desc: 'PSLF, IDR plans, and the July 2026 deadline' },
@@ -23,16 +23,32 @@ export default function Home() {
 
       <div className="disclaimer-box">
         This is educational content, not financial, tax, or legal advice.
-        Created by a medical resident drawing on published research and
-        widely-cited physician finance resources. Consult a qualified
+        Created by a medical resident drawing on published research including
+        the S&P SPIVA Scorecard, the Trinity Study, IRS.gov, and physician
+        finance resources like White Coat Investor. Consult a qualified
         professional for your specific situation.
       </div>
 
       <div className="stats-row">
         <Stat value="7.4/10" label="Avg resident financial stress" />
         <Stat value="$303K" label="Avg resident loan balance" />
-        <Stat value="94%" label="Active funds that lose over 20 yrs" />
+        <Stat value="94%" label="of stock-pickers who lose to a simple index fund over 20 years" />
         <Stat value="$1.34M" label="Cost of 1% advisory fee" />
+      </div>
+
+      <div style={{
+        borderLeft: '3px solid var(--color-green)',
+        padding: '1.25rem 1.5rem',
+        marginBottom: '2.5rem',
+        backgroundColor: 'var(--color-card-bg)',
+      }}>
+        <p style={{ marginBottom: 0 }}>
+          <strong>New to all of this?</strong> Start with these three pages:{' '}
+          <Link to="/accounts">Retirement Accounts</Link> &rarr;{' '}
+          <Link to="/index-funds">Index Funds</Link> &rarr;{' '}
+          <Link to="/fees">The Fee Problem</Link>.
+          Everything else builds on those.
+        </p>
       </div>
 
       <hr className="rule" />

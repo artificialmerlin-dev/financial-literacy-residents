@@ -8,9 +8,27 @@ export default function Accounts() {
     <div className="page">
       <span className="section-number">01</span>
       <h1>Retirement Accounts</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
       <p className="subtitle">
         The tax code gives you powerful tools to build wealth. Use them.
       </p>
+
+      <div style={{
+        borderLeft: '3px solid var(--color-accent)',
+        padding: '1.25rem 1.5rem',
+        marginBottom: '2rem',
+        backgroundColor: 'var(--color-card-bg)',
+      }}>
+        <h3 style={{ marginTop: 0, marginBottom: '0.75rem' }}>Priority Order</h3>
+        <div className="priority-list" style={{ margin: 0 }}>
+          <div className="priority-item">Employer match on 403(b)/401(k) — this is free money, always capture it first</div>
+          <div className="priority-item">Max out Roth IRA ($7,500)</div>
+          <div className="priority-item">Increase 403(b) contributions toward the $24,500 limit</div>
+          <div className="priority-item">457(b) if your institution offers one ($24,500 additional)</div>
+          <div className="priority-item">HSA (Health Savings Account) if you have a qualifying high-deductible health plan (HDHP)</div>
+          <div className="priority-item">Taxable brokerage account with remaining funds</div>
+        </div>
+      </div>
 
       <Rule />
 
@@ -20,6 +38,7 @@ export default function Accounts() {
         <Card topColor="var(--color-steel)">
           <h3 style={{ marginTop: 0 }}>Traditional (Pre-tax)</h3>
           <p>Contributions reduce your taxable income <strong>today</strong>. You pay income tax when you withdraw in retirement. This benefits you most when your current tax rate is <strong>higher</strong> than your expected retirement rate.</p>
+          <p style={{ marginBottom: 0 }}>For example, if you earn $65,000 and contribute $5,000 pre-tax to your 403(b), the IRS treats you as if you earned $60,000 — so you owe less tax this year.</p>
         </Card>
         <Card topColor="var(--color-green)">
           <h3 style={{ marginTop: 0 }}>Roth (Post-tax)</h3>
@@ -38,6 +57,12 @@ export default function Accounts() {
       <Rule />
 
       <h2>Account Types</h2>
+
+      <p>
+        You don't need all of these right now. Most residents should focus on two: a <strong>Roth
+        IRA</strong> (you open it yourself at Vanguard, Fidelity, or Schwab) and your employer's
+        <strong> 403(b) or 401(k)</strong>.
+      </p>
 
       <div className="account-cards">
         <Card topColor="var(--color-green)">
@@ -76,8 +101,8 @@ export default function Accounts() {
           <p><strong>2026 limit:</strong> $7,500</p>
           <p><strong>Tax treatment:</strong> Post-tax contributions, tax-free growth and withdrawals</p>
           <p style={{ marginBottom: 0 }}>
-            <strong>Key note:</strong> Income phase-out begins at $153,000 MAGI (single) for 2026. During residency,
-            you are well under this limit. After residency, you may need the Backdoor Roth IRA method.
+            <strong>Key note:</strong> Income phase-out begins at $153,000 MAGI (Modified Adjusted Gross Income) for single filers in 2026. During residency,
+            you are well under this limit. After residency, you may need the Backdoor Roth IRA method (explained below).
           </p>
         </Card>
 
@@ -96,9 +121,9 @@ export default function Accounts() {
         </Card>
 
         <Card topColor="var(--color-accent)">
-          <h3 style={{ marginTop: 0 }}>HSA</h3>
+          <h3 style={{ marginTop: 0 }}>HSA (Health Savings Account)</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--color-secondary)', fontStyle: 'italic', marginBottom: '0.75rem' }}>
-            Requires a high-deductible health plan
+            Requires a high-deductible health plan (HDHP)
           </p>
           <p><strong>2026 limit:</strong> $4,400 individual / $8,750 family</p>
           <p><strong>Tax treatment:</strong> Triple tax-advantaged — pre-tax in, tax-free growth, tax-free out for medical</p>
@@ -107,18 +132,6 @@ export default function Accounts() {
             pay medical expenses out of pocket, let the HSA grow as a stealth retirement account.
           </p>
         </Card>
-      </div>
-
-      <Rule />
-
-      <h2>Priority Order</h2>
-      <div className="priority-list">
-        <div className="priority-item">Employer match on 403(b)/401(k) — this is free money, always capture it first</div>
-        <div className="priority-item">Max out Roth IRA ($7,500)</div>
-        <div className="priority-item">Increase 403(b) contributions toward the $24,500 limit</div>
-        <div className="priority-item">457(b) if your institution offers one ($24,500 additional)</div>
-        <div className="priority-item">HSA if you have a qualifying high-deductible plan</div>
-        <div className="priority-item">Taxable brokerage account with remaining funds</div>
       </div>
 
       <Rule />
@@ -145,14 +158,16 @@ export default function Accounts() {
 
       <h2>Backdoor Roth IRA</h2>
       <p>
-        When your income exceeds the Roth IRA contribution limit as an attending, you can still
-        contribute to a Roth IRA through the "backdoor" method: contribute to a Traditional IRA (non-deductible),
-        then convert to Roth. This is a well-established strategy confirmed by the IRS. It requires having
-        no other pre-tax IRA balances to avoid the pro-rata rule.
+        After residency, your income will exceed Roth IRA contribution limits. The Backdoor Roth is
+        a legal workaround: you contribute to a Traditional IRA (non-deductible) and immediately
+        convert it to a Roth IRA. The conversion triggers no additional tax because you already
+        paid tax on the contribution. This strategy is legal, widely used by physicians, and has
+        been confirmed by the IRS. It requires having no other pre-tax IRA balances to avoid the
+        pro-rata rule.
       </p>
       <SideNote>
-        The Backdoor Roth is primarily relevant after residency when your income exceeds the direct
-        contribution limit. During residency, contribute directly to your Roth IRA.
+        During residency, you don't need the Backdoor — contribute directly to your Roth IRA.
+        The Backdoor becomes relevant when your income exceeds $153,000 (single) as an attending.
       </SideNote>
 
       <p className="source">

@@ -1,3 +1,4 @@
+import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
@@ -7,6 +8,7 @@ export default function IndexFunds() {
     <div className="page">
       <span className="section-number">02</span>
       <h1>Index Funds</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>6 min read</p>
       <p className="subtitle">
         The case for owning the entire market — and paying almost nothing to do it.
       </p>
@@ -15,10 +17,43 @@ export default function IndexFunds() {
 
       <Rule />
 
+      <div style={{
+        borderLeft: '3px solid var(--color-green)',
+        padding: '1.25rem 1.5rem',
+        marginBottom: '2rem',
+        backgroundColor: 'var(--color-card-bg)',
+      }}>
+        <h3 style={{ marginTop: 0, marginBottom: '0.75rem' }}>If you want zero decisions</h3>
+        <p style={{ marginBottom: '1rem' }}>
+          Buy one of these and never think about it again: a <strong>target-date retirement fund</strong> (e.g.
+          Vanguard Target Retirement 2065 at 0.08%) or a <strong>total U.S. stock market index fund</strong> (e.g.
+          Vanguard VTSAX at 0.04%, Fidelity FZROX at 0.00%, or Schwab SWTSX at 0.03%).
+        </p>
+        <p style={{ marginBottom: '1rem' }}>
+          A target-date fund automatically adjusts your mix of stocks and bonds as you age. A total stock market
+          or S&P 500 fund is 100% stocks — higher long-term growth potential but more short-term volatility.
+          Either is a great choice for a resident with 30+ years until retirement.
+        </p>
+        <p style={{ marginBottom: 0, fontWeight: 600 }}>
+          The key is picking one and actually doing it.
+        </p>
+      </div>
+
+      <h3>What's the difference?</h3>
+      <p>
+        A <strong>target-date fund</strong> holds a mix of stocks and bonds and automatically shifts toward
+        more bonds as you approach retirement. A <strong>total stock market</strong> or <strong>S&P 500
+        fund</strong> is 100% stocks — higher long-term growth potential, but more short-term volatility.
+        Either is a great choice for a resident with 30+ years until retirement.
+      </p>
+
+      <Rule />
+
       <h2>The SPIVA Scorecard</h2>
       <p>
-        Standard & Poor's publishes a semi-annual report comparing actively managed funds to their
-        benchmark indices. The results are consistent and devastating for active management.
+        The S&P SPIVA Scorecard (an independent study that tracks how professional money managers
+        perform against simple index funds) is published semi-annually by Standard & Poor's.
+        The results are consistent and devastating for active management.
         Over one year, <strong>54%</strong> of actively managed large-cap funds underperform.
         Over five years, <strong>77%</strong>. Over ten, <strong>87%</strong>. Over fifteen, <strong>92%</strong>.
         Over twenty years, <strong>94%</strong> of active funds fail to beat the index. On a risk-adjusted
@@ -56,10 +91,15 @@ export default function IndexFunds() {
 
       <h2>The Three-Fund Portfolio</h2>
       <p>
-        The simplest evidence-based investment strategy requires just three funds: a U.S. total
+        If you want more control, the simplest evidence-based investment strategy requires just three funds: a U.S. total
         stock market index, an international stock index, and a U.S. total bond market index.
         This gives you broad diversification across thousands of companies and bonds at near-zero cost.
       </p>
+
+      <SideNote>
+        These are ticker symbols — the short codes you type when buying a fund in your brokerage account.
+        The percentages in parentheses are annual expense ratios (the yearly fee the fund charges, deducted automatically).
+      </SideNote>
 
       <div className="table-wrap">
       <table>
@@ -99,17 +139,6 @@ export default function IndexFunds() {
         have no expense ratio at all. The difference between 0.00% and 0.11% may seem trivial, but
         on a $3 million portfolio held for 30 years, it compounds to tens of thousands of dollars.
       </SideNote>
-
-      <Rule />
-
-      <h2>The Simplest Option</h2>
-      <p>
-        If choosing three funds and rebalancing feels like more than you want to manage right now,
-        buy a single <strong>target-date fund</strong>. These funds hold a mix of stocks and bonds and
-        automatically shift more conservative as you approach retirement. Vanguard's Target Retirement
-        2065 fund (VLXVX) charges <strong>0.08%</strong> and handles everything. You can always move
-        to a three-fund portfolio later when you have the bandwidth.
-      </p>
 
       <p className="source">
         Fund data: Vanguard, Fidelity, and Charles Schwab, as of early 2026. SPIVA data: S&P Dow Jones Indices.

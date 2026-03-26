@@ -6,6 +6,7 @@ export default function Taxes() {
     <div className="page">
       <span className="section-number">04</span>
       <h1>Taxes</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>5 min read</p>
       <p className="subtitle">
         Understanding your bracket today — and where it is headed — shapes every financial decision.
       </p>
@@ -32,6 +33,13 @@ export default function Taxes() {
         </tbody>
       </table>
       </div>
+
+      <h3>How brackets actually work</h3>
+      <p>
+        <strong>Important: you don't pay 22% on all of your income.</strong> Tax brackets are marginal — you
+        pay 10% on the first ~$11,925, 12% on the next ~$36,550, and 22% only on income above ~$48,475.
+        Your actual effective rate on a $65,000 salary (after the $16,100 standard deduction) is about 13-15%.
+      </p>
 
       <SideNote>
         The standard deduction for 2026 is $16,100 for single filers. This means a resident earning
@@ -69,21 +77,23 @@ export default function Taxes() {
       </p>
       <p>
         <strong>Student loan interest deduction.</strong> You can deduct up to <strong>$2,500</strong> of
-        student loan interest paid. This deduction phases out for single filers with MAGI above $80,000,
-        so most residents qualify. It is an "above-the-line" deduction — you get it even with the standard
-        deduction.
+        student loan interest paid. This deduction phases out for single filers with MAGI (Modified Adjusted
+        Gross Income) above $80,000, so most residents qualify. You get this even if you take the standard
+        deduction — it's an "above the line" deduction. Your loan servicer sends you a Form 1098-E each
+        January with the amount. Any tax software (TurboTax, FreeTaxUSA, etc.) handles it automatically.
       </p>
       <p>
-        <strong>HSA contributions if eligible.</strong> If you have a qualifying high-deductible health plan,
-        HSA contributions reduce your taxable income while growing tax-free. This is the only account with
-        a tax benefit at contribution, growth, and withdrawal.
+        <strong>HSA (Health Savings Account) contributions if eligible.</strong> If you have a qualifying
+        high-deductible health plan (HDHP), HSA contributions reduce your taxable income while growing
+        tax-free. This is the only account with a tax benefit at contribution, growth, and withdrawal.
       </p>
 
-      <SideNote>
-        State and local taxes vary significantly by location. A resident in Texas or Florida pays no
-        state income tax, while a resident in California or New York may owe an additional 5-10% or more.
-        Factor your state's rate into any Roth vs Traditional analysis.
-      </SideNote>
+      <h3>State and local taxes</h3>
+      <p>
+        State income taxes vary dramatically. Examples: <strong>Texas and Florida</strong> have no state
+        income tax. <strong>Maryland</strong> charges ~7-8% combined state and county. <strong>California's</strong> top
+        rate reaches 13.3%. This matters when comparing job offers.
+      </p>
 
       <Rule />
 

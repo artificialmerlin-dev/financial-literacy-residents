@@ -8,6 +8,7 @@ export default function CreditCards() {
     <div className="page">
       <span className="section-number">07</span>
       <h1>Credit Cards</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>4 min read</p>
       <p className="subtitle">
         A tool for building credit and earning travel rewards — if and only if you pay in full every month.
       </p>
@@ -17,9 +18,19 @@ export default function CreditCards() {
       <h2>The Only Rule</h2>
       <p>
         Credit card rewards are worth pursuing <strong>only if you pay your statement balance in full
-        every single month</strong>. Credit card interest rates are typically 20-29% APR. No amount of
-        points or cashback justifies carrying a balance. If you cannot commit to paying in full, use
-        a debit card.
+        every single month</strong>. Credit card interest rates are typically 20-29% APR (Annual
+        Percentage Rate). No amount of points or cashback justifies carrying a balance. If you cannot
+        commit to paying in full, use a debit card.
+      </p>
+
+      <Rule />
+
+      <h2>What Are Points?</h2>
+      <p>
+        Credit card rewards are a percentage of your spending returned to you as points.
+        Points can be redeemed for travel bookings, statement credits toward your bill, or
+        transferred to airline and hotel loyalty programs — where their value typically increases
+        by 50-100%.
       </p>
 
       <Rule />
@@ -42,10 +53,10 @@ export default function CreditCards() {
 
       <Rule />
 
-      <h2>The Chase Trifecta</h2>
+      <h2>The Recommended Chase Card Combination</h2>
       <p>
-        Three cards, used together, maximize your earning rate across all spending categories while
-        keeping annual fees minimal.
+        The recommended Chase card combination (often called the "Chase trifecta"): three cards that together
+        maximize your points across all spending categories, while keeping annual fees minimal.
       </p>
 
       <div style={{ display: 'grid', gap: '1rem', marginTop: '1.5rem' }}>

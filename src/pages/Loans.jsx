@@ -8,6 +8,7 @@ export default function Loans() {
     <div className="page">
       <span className="section-number">05</span>
       <h1>Student Loans</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
       <p className="subtitle">
         Your loan strategy is a six-figure decision. Get it right before you start making payments.
       </p>
@@ -19,15 +20,20 @@ export default function Loans() {
       <h2>Two Paths</h2>
       <div className="side-by-side">
         <Card topColor="var(--color-green)">
-          <h3 style={{ marginTop: 0 }}>PSLF Forgiveness</h3>
+          <h3 style={{ marginTop: 0 }}>PSLF (Public Service Loan Forgiveness)</h3>
           <p>
-            <strong>Public Service Loan Forgiveness</strong> erases your remaining federal loan balance
+            PSLF erases your remaining federal loan balance
             after 120 qualifying monthly payments (10 years) while working full-time at a 501(c)(3)
             employer — which includes most academic medical centers and nonprofit hospitals.
           </p>
           <p>
+            Most academic medical centers, teaching hospitals, and VA hospitals qualify. Check yours
+            by searching on the IRS Tax Exempt Organization Search tool, or ask your HR department.
+          </p>
+          <p>
             Forgiveness is <strong>tax-free</strong>. Even <strong>$0 payments count</strong> toward
-            the 120 payment threshold if you are on an income-driven repayment plan. A five-year
+            the 120 payment threshold if you are on an income-driven repayment (IDR) plan — where your monthly
+            payment is based on your income, not your loan balance. A five-year
             residency means you arrive at fellowship or your first attending job with <strong>60
             payments already completed</strong> — halfway to forgiveness.
           </p>
@@ -43,7 +49,7 @@ export default function Loans() {
             hospital), PSLF is not an option. Your strategy shifts to minimizing total interest paid.
           </p>
           <p>
-            During residency, enroll in an income-driven repayment plan to keep payments manageable.
+            During residency, enroll in an income-driven repayment (IDR) plan to keep payments manageable.
             Once your attending salary arrives, redirect as much income as possible toward the loan
             principal. Some physicians pay off $200,000+ in two to three years of focused repayment.
           </p>
@@ -56,7 +62,11 @@ export default function Loans() {
 
       <Rule />
 
-      <h2>Income-Driven Repayment Plans</h2>
+      <h2>Income-Driven Repayment (IDR) Plans</h2>
+      <p>
+        IDR plans set your monthly payment based on your income, not your loan balance. This keeps
+        payments affordable during residency, when your salary is low relative to your debt.
+      </p>
 
       <Card style={{ marginBottom: '1rem' }}>
         <h3 style={{ marginTop: 0 }}>PAYE (Pay As You Earn)</h3>
@@ -79,9 +89,10 @@ export default function Loans() {
       <Card style={{ marginBottom: '1rem' }}>
         <h3 style={{ marginTop: 0 }}>RAP (Repayment Assistance Plan)</h3>
         <p>
-          A <strong>new plan effective July 1, 2026</strong>. Payments range from <strong>1-10% of
-          full AGI</strong> (not discretionary income). Forgiveness after 30 years. This is the
-          replacement plan under the One Big Beautiful Bill Act.
+          RAP is the new income-driven plan Congress created to replace SAVE and the other plans
+          being phased out. <strong>Effective July 1, 2026.</strong> Payments range from <strong>1-10% of
+          full AGI (Adjusted Gross Income)</strong> — not discretionary income. Forgiveness after 30 years.
+          This is the replacement plan under the One Big Beautiful Bill Act.
         </p>
       </Card>
 
@@ -98,10 +109,10 @@ export default function Loans() {
 
       <h2>Critical: July 2026 PSLF Changes</h2>
       <p>
-        The <strong>One Big Beautiful Bill Act</strong> includes a provision that loans originated
-        after July 1, 2026 will <strong>not count residency training years toward PSLF</strong>.
-        This is a fundamental change to the program. Current residents with existing federal loans
-        are <strong>grandfathered</strong> under the old rules — your residency years still count.
+        The <strong>One Big Beautiful Bill Act</strong> includes a major change to PSLF.
+        New loans borrowed after July 1, 2026 will <strong>not count residency training years
+        toward PSLF</strong>. If you already have loans, you are <strong>grandfathered</strong> under
+        the old rules — this doesn't affect you. Your residency years still count toward forgiveness.
         But if you take out new federal loans after July 2026, those loans will not accrue PSLF
         credit during residency.
       </p>
@@ -124,9 +135,10 @@ export default function Loans() {
       <h2>Getting Professional Help</h2>
       <p>
         <strong><a href="https://studentloanplanner.com" target="_blank" rel="noopener noreferrer">Student Loan Planner</a></strong> (studentloanplanner.com), founded by Travis Hornsby,
-        offers flat-fee loan consultations for <strong>$595</strong>. They have advised over 13,000
-        clients with an average reported savings of <strong>$80,000+</strong> per borrower. For a
-        six-figure loan decision, this is one of the highest-return professional consultations
+        offers flat-fee loan consultations for <strong>$595</strong>. They've consulted on over
+        <strong> $5 billion</strong> in student debt across 22,000+ clients, roughly 75% of whom are
+        medical professionals, with an average reported savings of <strong>$80,000+</strong> per borrower.
+        For a six-figure loan decision, this is one of the highest-return professional consultations
         available.
       </p>
 

@@ -17,9 +17,55 @@ export default function Calculator() {
 
       <Rule />
 
+      <h2>Example Scenarios</h2>
+
+      <div style={{ display: 'grid', gap: '1rem', marginBottom: '2rem' }}>
+        <div style={{
+          border: '1px solid var(--color-card-border)',
+          backgroundColor: 'var(--color-card-bg)',
+          padding: '1.25rem 1.5rem',
+        }}>
+          <h3 style={{ marginTop: 0 }}>PGY-1 Resident</h3>
+          <p style={{ marginBottom: 0 }}>
+            $65K income, $50K expenses, $0 saved, 5% real return &rarr; <strong>23% savings rate</strong>,
+            <strong> $1.25M FI number</strong>, <strong>~33.7 years to FI</strong>
+          </p>
+        </div>
+        <div style={{
+          border: '1px solid var(--color-card-border)',
+          backgroundColor: 'var(--color-card-bg)',
+          padding: '1.25rem 1.5rem',
+        }}>
+          <h3 style={{ marginTop: 0 }}>New Attending</h3>
+          <p style={{ marginBottom: 0 }}>
+            $400K income, $120K expenses, $50K saved, 5% real return &rarr; <strong>70% savings rate</strong>,
+            <strong> $3M FI number</strong>, <strong>~8.7 years to FI</strong>
+          </p>
+        </div>
+        <div style={{
+          border: '1px solid var(--color-card-border)',
+          backgroundColor: 'var(--color-card-bg)',
+          padding: '1.25rem 1.5rem',
+        }}>
+          <h3 style={{ marginTop: 0 }}>"Live Like a Resident" Attending</h3>
+          <p style={{ marginBottom: 0 }}>
+            $400K income, $65K expenses, $50K saved, 5% real return &rarr; <strong>84% savings rate</strong>,
+            <strong> $1.63M FI number</strong>, <strong>~4.3 years to FI</strong>
+          </p>
+        </div>
+      </div>
+
+      <SideNote>
+        The "live like a resident" scenario is the most powerful lever in physician finance. Keeping your
+        expenses at resident levels for 3-5 years after training — while your income jumps 4-6x — can
+        compress decades of saving into a few years.
+      </SideNote>
+
+      <Rule />
+
       <h2>The 25x Rule</h2>
       <p>
-        Financial independence is commonly defined as having <strong>25 times your annual expenses</strong> invested
+        Financial independence (FI) is commonly defined as having <strong>25 times your annual expenses</strong> invested
         in a diversified portfolio. This is the inverse of the 4% rule: if you can withdraw 4% of your
         portfolio each year to cover living expenses, you no longer need employment income to sustain
         your lifestyle.

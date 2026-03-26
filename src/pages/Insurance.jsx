@@ -8,6 +8,7 @@ export default function Insurance() {
     <div className="page">
       <span className="section-number">06</span>
       <h1>Insurance</h1>
+      <p className="caption" style={{ marginBottom: '0.5rem' }}>7 min read</p>
       <p className="subtitle">
         Protecting the asset that funds everything else — your ability to earn.
       </p>
@@ -17,7 +18,7 @@ export default function Insurance() {
       <h2>Disability Insurance</h2>
 
       <Stat value="1 in 4" label="of today's 20-year-olds will become disabled before retirement" />
-      <SideNote>Source: Social Security Administration, 2024.</SideNote>
+      <SideNote>Source: Social Security Administration (SSA), 2024.</SideNote>
 
       <p>
         The statistic is jarring because most people associate disability with accidents. In reality,
@@ -43,10 +44,14 @@ export default function Insurance() {
         "any-occupation" policy would not.
       </p>
 
-      <h3>Five Riders to Insist On</h3>
+      <h3>Two non-negotiable riders</h3>
       <div className="priority-list">
         <div className="priority-item"><strong>Non-cancelable and guaranteed renewable</strong> — the insurer cannot raise your premiums or cancel your policy as long as you pay</div>
         <div className="priority-item"><strong>True own-occupation</strong> — pays if you cannot work in your specific specialty, even if you earn income in another field</div>
+      </div>
+
+      <h3>Three riders worth the extra cost</h3>
+      <div className="priority-list">
         <div className="priority-item"><strong>Partial/residual disability</strong> — pays a proportional benefit if you can work but at reduced capacity or income</div>
         <div className="priority-item"><strong>Cost-of-living adjustment (COLA)</strong> — your benefit increases with inflation each year you are on claim</div>
         <div className="priority-item"><strong>Future Increase Option (FIO)</strong> — allows you to increase coverage later (as an attending) without new medical underwriting</div>
@@ -59,12 +64,17 @@ export default function Insurance() {
         Get quotes from at least two or three. Specialty, age, gender, state, and health history all
         affect pricing.
       </p>
+      <p>
+        <strong>Don't call each carrier yourself.</strong> Contact an independent disability insurance
+        broker — they shop all five carriers for you and the quotes are free. The broker is paid by
+        the insurance company, not you.
+      </p>
 
       <h3>Why Buy During Residency</h3>
       <p>
         Most residency programs offer access to group disability policies at <strong>20-40% discounts</strong>.
         More importantly, locking in a policy during residency means your premiums are based on your
-        younger age and health — permanently. The <strong>Future Increase Option</strong> lets you
+        younger age and health — permanently. The <strong>Future Increase Option (FIO)</strong> lets you
         increase your coverage to match your attending salary later without any additional medical
         underwriting. A typical resident premium is <strong>$150-$350 per month</strong>.
       </p>
@@ -110,9 +120,12 @@ export default function Insurance() {
       </div>
 
       <p>
+        That's a <strong>20x markup</strong>. The $515/month difference, invested in index funds
+        at 7% for 30 years, grows to roughly <strong>$620,000</strong>.
+      </p>
+      <p>
         The standard advice from independent financial experts: <strong>buy term, invest the
-        difference</strong>. The $515 per month you save by choosing term over whole life, invested
-        in an index fund at 7% over 30 years, grows to over $600,000.
+        difference</strong>.
       </p>
 
       <SideNote>
