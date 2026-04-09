@@ -2,7 +2,7 @@ import Card from '../components/Card'
 import Stat from '../components/Stat'
 import Rule from '../components/Rule'
 import SideNote from '../components/SideNote'
-import PSLFCalculator from '../components/PSLFCalculator'
+import LoanCalculator from '../components/LoanCalculator'
 import PageSEO from '../components/PageSEO'
 import RelatedLinks from '../components/RelatedLinks'
 
@@ -205,7 +205,7 @@ export default function Loans() {
 
       <Rule />
 
-      <PSLFCalculator />
+      <LoanCalculator />
 
       <p className="source">
         Median debt: AAMC Graduation Questionnaire, 2025. PSLF rules: Department of Education.
