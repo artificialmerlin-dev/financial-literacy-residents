@@ -6,10 +6,11 @@ function formatCurrency(num) {
 }
 
 export default function FICalculator() {
-  const [income, setIncome] = useState(65000)
-  const [expenses, setExpenses] = useState(50000)
+  const [income, setIncome] = useState(55000)
+  const [expenses, setExpenses] = useState(45000)
   const [saved, setSaved] = useState(0)
-  const [realReturn, setRealReturn] = useState(5)
+  const [realReturn, setRealReturn] = useState(4)
+  const [accountType, setAccountType] = useState('tax-advantaged')
 
   const annualSavings = income - expenses
   const savingsRate = income > 0 && annualSavings > 0
@@ -18,6 +19,9 @@ export default function FICalculator() {
   const fiNumber = expenses * 25
   const alreadyFI = saved >= fiNumber && fiNumber > 0
 
+  const taxDrag = accountType === 'taxable' ? 0.15 : 0
+  const effectiveReturn = realReturn * (1 - taxDrag)
+
   let yearsDisplay
   if (annualSavings <= 0) {
     yearsDisplay = 'N/A'
@@ -25,7 +29,7 @@ export default function FICalculator() {
     yearsDisplay = null // handled separately
   } else {
     const fiTarget = fiNumber - saved
-    const r = realReturn / 100
+    const r = effectiveReturn / 100
     if (r === 0) {
       yearsDisplay = (fiTarget / annualSavings).toFixed(1)
     } else {
@@ -45,7 +49,7 @@ export default function FICalculator() {
     <div>
       <div className="calc-inputs">
         <div className="calc-input">
-          <label>Annual income (gross)</label>
+          <label>Annual income (after taxes)</label>
           <input
             type="text"
             value={income || ''}
@@ -73,8 +77,41 @@ export default function FICalculator() {
         </div>
       </div>
 
+      <div className="calc-inputs" style={{ marginTop: '0.5rem' }}>
+        <div className="calc-input">
+          <label>Account type</label>
+          <select
+            value={accountType}
+            onChange={(e) => setAccountType(e.target.value)}
+            style={{
+              fontFamily: 'var(--font-main)',
+              fontSize: '1rem',
+              padding: '0.5rem',
+              border: '1px solid var(--color-card-border)',
+              backgroundColor: 'var(--color-bg)',
+              color: 'var(--color-text)',
+              width: '100%',
+            }}
+          >
+            <option value="tax-advantaged">Roth / 403(b) / IRA (tax-advantaged)</option>
+            <option value="taxable">Taxable brokerage account</option>
+          </select>
+          <p style={{
+            fontStyle: 'italic',
+            fontSize: '0.8rem',
+            color: 'var(--color-secondary)',
+            marginTop: '0.35rem',
+            marginBottom: 0,
+          }}>
+            {accountType === 'taxable'
+              ? 'Taxable accounts incur ~15% annual tax drag on gains (dividends + capital gains distributions).'
+              : 'Tax-advantaged accounts grow tax-free or tax-deferred — no annual drag on gains.'}
+          </p>
+        </div>
+      </div>
+
       <div className="calc-slider">
-        <label>Expected real return after inflation</label>
+        <label>Expected real return — inflation-adjusted</label>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
           <input
             type="range"
@@ -102,7 +139,7 @@ export default function FICalculator() {
           marginTop: '0.35rem',
           marginBottom: 0,
         }}>
-          Real return = after inflation. U.S. stocks have historically averaged ~7% nominal, ~4-5% real.
+          Real return = after inflation. U.S. stocks have historically averaged ~10% nominal, ~7% real. A 4% assumption is conservative and accounts for a diversified portfolio with bonds.
         </p>
       </div>
 
@@ -127,14 +164,22 @@ export default function FICalculator() {
         lineHeight: 1.5,
       }}>
         <p style={{ marginBottom: 0 }}>
-          FI number = annual expenses x 25. The portfolio size where you can withdraw 4% per year to cover expenses indefinitely.
+          Income should be net of all taxes (federal, state, FICA). This is your actual take-home pay.
+        </p>
+        <p style={{ marginBottom: 0 }}>
+          FI number = annual expenses × 25. The portfolio size where you can withdraw 4% per year to cover expenses indefinitely.
         </p>
         <p style={{ marginBottom: 0 }}>
           Based on the 4% safe withdrawal rate (Trinity Study, 1998). For 40+ year horizons, 3-3.5% is more conservative.
         </p>
         <p style={{ marginBottom: 0 }}>
-          Real return means after inflation. If the market returns 8% and inflation is 3%, your real return is 5%.
+          Real return means after inflation. If the market returns 7% and inflation is 3%, your real return is ~4%. Using real returns means the FI number and years are in today's dollars.
         </p>
+        {accountType === 'taxable' && (
+          <p style={{ marginBottom: 0 }}>
+            Tax drag: in a taxable account, dividends and capital gains distributions are taxed annually, reducing your effective return by ~15%. The actual impact varies by fund efficiency and your tax bracket.
+          </p>
+        )}
       </div>
     </div>
   )

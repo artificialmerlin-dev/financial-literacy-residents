@@ -46,8 +46,8 @@ export default function Calculator() {
         }}>
           <h3 style={{ marginTop: 0 }}>PGY-1 Resident</h3>
           <p style={{ marginBottom: 0 }}>
-            $65K income, $50K expenses, $0 saved, 5% real return &rarr; <strong>23% savings rate</strong>,
-            <strong> $1.25M FI number</strong>, <strong>~33.7 years to FI</strong>
+            $55K after-tax income, $45K expenses, $0 saved, 4% real return &rarr; <strong>18% savings rate</strong>,
+            <strong> $1.13M FI number</strong>, <strong>~43.5 years to FI</strong>
           </p>
         </div>
         <div style={{
@@ -57,8 +57,8 @@ export default function Calculator() {
         }}>
           <h3 style={{ marginTop: 0 }}>New Attending</h3>
           <p style={{ marginBottom: 0 }}>
-            $400K income, $120K expenses, $50K saved, 5% real return &rarr; <strong>70% savings rate</strong>,
-            <strong> $3M FI number</strong>, <strong>~8.7 years to FI</strong>
+            $275K after-tax income, $120K expenses, $50K saved, 4% real return &rarr; <strong>56% savings rate</strong>,
+            <strong> $3M FI number</strong>, <strong>~14.4 years to FI</strong>
           </p>
         </div>
         <div style={{
@@ -68,15 +68,15 @@ export default function Calculator() {
         }}>
           <h3 style={{ marginTop: 0 }}>"Live Like a Resident" Attending</h3>
           <p style={{ marginBottom: 0 }}>
-            $400K income, $65K expenses, $50K saved, 5% real return &rarr; <strong>84% savings rate</strong>,
-            <strong> $1.63M FI number</strong>, <strong>~4.3 years to FI</strong>
+            $275K after-tax income, $55K expenses, $50K saved, 4% real return &rarr; <strong>80% savings rate</strong>,
+            <strong> $1.38M FI number</strong>, <strong>~5.5 years to FI</strong>
           </p>
         </div>
       </div>
 
       <SideNote>
         The "live like a resident" scenario is the most powerful lever in physician finance. Keeping your
-        expenses at resident levels for 3-5 years after training — while your income jumps 4-6x — can
+        expenses at resident levels for 3-5 years after training — while your take-home income jumps 4-6x — can
         compress decades of saving into a few years.
       </SideNote>
 
