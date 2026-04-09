@@ -63,7 +63,7 @@ export default function Fees() {
         can still earn commissions on products they sell you — the word "fee" in the title is misleading.
         A <strong>"fee-only"</strong> advisor earns compensation only from the fees you pay directly,
         with no commissions, kickbacks, or revenue sharing from fund companies. Fewer than <strong>2%</strong> of
-        financial advisors in the United States are fee-only fiduciaries.
+        financial advisors in the United States meet the fee-only fiduciary standard.
       </p>
       <p>
         A <strong>fiduciary</strong> is legally required to act in your best interest. Most financial

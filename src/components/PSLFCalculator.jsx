@@ -135,8 +135,9 @@ export default function PSLFCalculator() {
 
       <div className="calc-inputs-2col">
         <div className="calc-input">
-          <label>Total federal student loan balance</label>
+          <label htmlFor="pslf-balance">Total federal student loan balance</label>
           <input
+            id="pslf-balance"
             type="text"
             value={loanBalance || ''}
             onChange={handleNumber(setLoanBalance)}
@@ -144,8 +145,9 @@ export default function PSLFCalculator() {
           />
         </div>
         <div className="calc-input">
-          <label>Expected attending salary</label>
+          <label htmlFor="pslf-salary">Expected attending salary</label>
           <input
+            id="pslf-salary"
             type="text"
             value={attendingSalary || ''}
             onChange={handleNumber(setAttendingSalary)}
@@ -175,8 +177,9 @@ export default function PSLFCalculator() {
           </select>
         </div>
         <div className="calc-input">
-          <label>Average loan interest rate (%)</label>
+          <label htmlFor="pslf-rate">Average loan interest rate (%)</label>
           <input
+            id="pslf-rate"
             type="number"
             step="0.1"
             value={interestRate}

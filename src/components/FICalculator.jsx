@@ -49,8 +49,9 @@ export default function FICalculator() {
     <div>
       <div className="calc-inputs">
         <div className="calc-input">
-          <label>Annual income (after taxes)</label>
+          <label htmlFor="fi-income">Annual income (after taxes)</label>
           <input
+            id="fi-income"
             type="text"
             value={income || ''}
             onChange={handleNumber(setIncome)}
@@ -58,8 +59,9 @@ export default function FICalculator() {
           />
         </div>
         <div className="calc-input">
-          <label>Annual expenses</label>
+          <label htmlFor="fi-expenses">Annual expenses</label>
           <input
+            id="fi-expenses"
             type="text"
             value={expenses || ''}
             onChange={handleNumber(setExpenses)}
@@ -67,8 +69,9 @@ export default function FICalculator() {
           />
         </div>
         <div className="calc-input">
-          <label>Already saved</label>
+          <label htmlFor="fi-saved">Already saved</label>
           <input
+            id="fi-saved"
             type="text"
             value={saved || ''}
             onChange={handleNumber(setSaved)}
@@ -79,8 +82,9 @@ export default function FICalculator() {
 
       <div className="calc-inputs" style={{ marginTop: '0.5rem' }}>
         <div className="calc-input">
-          <label>Account type</label>
+          <label htmlFor="fi-account-type">Account type</label>
           <select
+            id="fi-account-type"
             value={accountType}
             onChange={(e) => setAccountType(e.target.value)}
             style={{
@@ -120,6 +124,10 @@ export default function FICalculator() {
             step="0.5"
             value={realReturn}
             onChange={(e) => setRealReturn(parseFloat(e.target.value))}
+            aria-label="Expected real return percentage"
+            aria-valuenow={realReturn}
+            aria-valuemin={1}
+            aria-valuemax={10}
             style={{ flex: 1 }}
           />
           <span style={{

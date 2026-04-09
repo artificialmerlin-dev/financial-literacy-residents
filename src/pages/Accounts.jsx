@@ -163,7 +163,7 @@ export default function Accounts() {
       <Stat value="~$286,000" label="Tax-free at retirement" />
       <SideNote>
         Contributing $7,500 per year for 5 years of residency ($37,500 total) and letting it grow at 7%
-        annualized for 30 years yields approximately $286,000 — all tax-free. Start early. Time is the
+        nominal (before inflation) for 30 years yields approximately $286,000 — all tax-free. Start early. Time is the
         single most powerful variable in compounding.
       </SideNote>
 

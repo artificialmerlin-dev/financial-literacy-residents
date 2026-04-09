@@ -14,6 +14,17 @@ const sections = [
   { path: '/resources', number: '09', title: 'Resources', desc: 'Books, sites, and tools' },
 ]
 
+const faq = [
+  {
+    question: 'What is this guide?',
+    answer: 'A free, evidence-based financial literacy resource for medical residents covering retirement accounts, index fund investing, advisory fees, taxes, student loans, insurance, credit cards, and financial independence. Built on IRS data, the S&P SPIVA Scorecard, the Trinity Study, and physician finance resources.',
+  },
+  {
+    question: 'Who is this for?',
+    answer: 'Medical residents and fellows in the United States. The content is also useful for medical students, new attending physicians, and anyone early in a high-income career who wants a concise guide to building wealth and avoiding common financial mistakes.',
+  },
+]
+
 export default function Home() {
   return (
     <article className="page">
@@ -21,6 +32,7 @@ export default function Home() {
         title="Financial Literacy for Medical Residents — Retirement, Investing, Loans & Insurance Guide"
         description="A comprehensive financial literacy guide for medical residents covering retirement accounts, index funds, student loans, insurance, taxes, and more. Built on IRS data, the SPIVA Scorecard, and the Trinity Study."
         path="/"
+        faq={faq}
       />
       <h1>Financial Literacy for Medical Residents</h1>
       <p className="subtitle">
@@ -38,7 +50,7 @@ export default function Home() {
       <section>
         <div className="stats-row">
           <Stat value="7.4/10" label="Avg resident financial stress" />
-          <Stat value="$303K" label="Avg resident loan balance" />
+          <Stat value="$215K" label="Median medical student debt, Class of 2025 (AAMC)" />
           <Stat value="94%" label="of stock-pickers who lose to a simple index fund over 20 years" />
           <Stat value="$1.34M" label="Cost of 1% advisory fee" />
         </div>
@@ -67,17 +79,7 @@ export default function Home() {
             <Link
               key={path}
               to={path}
-              style={{
-                display: 'block',
-                border: '1px solid var(--color-card-border)',
-                backgroundColor: 'var(--color-card-bg)',
-                padding: '1.25rem 1.5rem',
-                textDecoration: 'none',
-                color: 'var(--color-text)',
-                transition: 'border-color 0.2s',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-rule)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--color-card-border)'}
+              className="section-card"
             >
               <span className="section-number">{number}</span>
               <span style={{ fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>{title}</span>

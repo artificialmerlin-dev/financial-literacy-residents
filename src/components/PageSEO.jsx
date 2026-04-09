@@ -26,6 +26,9 @@ export default function PageSEO({ title, description, path, faq }) {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="article" />
       <meta property="og:url" content={url} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       <link rel="canonical" href={url} />
       {faqSchema && (
         <script type="application/ld+json">

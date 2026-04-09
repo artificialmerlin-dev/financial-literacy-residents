@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const sections = [
@@ -18,8 +18,14 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape' && open) setOpen(false) }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [open])
+
   return (
-    <nav style={{
+    <nav aria-label="Main navigation" style={{
       position: 'sticky',
       top: 0,
       zIndex: 100,
@@ -61,6 +67,7 @@ export default function Nav() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
           style={{
             background: 'none',
             border: 'none',
@@ -77,7 +84,7 @@ export default function Nav() {
         </button>
       </div>
       {open && (
-        <div style={{
+        <div role="menu" aria-hidden={!open} style={{
           maxWidth: 'var(--max-width)',
           margin: '0 auto',
           padding: '0 1.5rem 1rem',
@@ -97,6 +104,7 @@ export default function Nav() {
                 textDecoration: pathname === path ? 'underline' : 'none',
                 textUnderlineOffset: '4px',
               }}
+              aria-current={pathname === path ? 'page' : undefined}
             >
               {label}
             </Link>

@@ -87,7 +87,7 @@ export default function Resources() {
             studentloanplanner.com
           </p>
           <p style={{ marginBottom: 0 }}>
-            Founded by Travis Hornsby. Offers flat-fee loan strategy consultations ($595) and
+            Founded by Travis Hornsby. Offers flat-fee loan strategy consultations and
             free educational content on federal repayment plans, PSLF (Public Service Loan Forgiveness), and refinancing.
           </p>
         </Card>

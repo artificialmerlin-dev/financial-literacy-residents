@@ -2,7 +2,7 @@
   --color-bg: #FFFFF8;
   --color-text: #111111;
   --color-secondary: #888888;
-  --color-source: #BBBBBB;
+  --color-source: #767676;
   --color-accent: #A4262C;
   --color-green: #2D6A4F;
   --color-steel: #264653;
@@ -18,6 +18,29 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-steel);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg);
+  color: var(--color-steel);
+  border: 2px solid var(--color-steel);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
 }
 
 html {
@@ -189,7 +212,6 @@ th {
 td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-card-border);
-  white-space: nowrap;
 }
 
 .priority-list {
@@ -355,4 +377,25 @@ td {
   th, td {
     padding: 0.5rem 0.5rem;
   }
+}
+
+.section-card {
+  display: block;
+  border: 1px solid var(--color-card-border);
+  background-color: var(--color-card-bg);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.2s;
+}
+
+.section-card:hover {
+  border-color: var(--color-rule);
+}
+
+@media print {
+  nav, footer, .skip-link { display: none; }
+  .page { max-width: none; padding: 0; }
+  a { color: var(--color-text); text-decoration: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: var(--color-secondary); }
 }
